@@ -13,6 +13,7 @@ execute `pip3 install -r requirements.txt`
 
 #### Train
 
+For train, you have to make data files(cs_train.conll, cs_train.tsv) with the same format of test or dev files in the same directory.
 To train a 3-relation ment-norm model, from the main folder run 
 
     python -u -m nel.main --mode train --n_rels 3 --mulrel_type ment-norm
