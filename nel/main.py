@@ -30,6 +30,7 @@ parser.add_argument("--mode", type=str,
 parser.add_argument("--model_path", type=str,
                     help="model path to save/load",
                     default='model/model')
+parser.add_argument("--input_file", type=str, help="file name to test", default="test_text.txt")
 
 # args for preranking (i.e. 2-step candidate selection)
 parser.add_argument("--n_cands_before_rank", type=int,
@@ -210,8 +211,8 @@ if __name__ == "__main__":
 
     elif args.mode == 'test':
         text = ''
-        with open('test_text.txt', 'r', encoding='utf-8') as f:
-            for line in f:
+        with open(args.input_file, 'r', encoding='utf-8') as f:
+            for line in f.readlines():
                 text += line + '\n'
 
         result = entity_linking_plain(text)

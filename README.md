@@ -9,6 +9,8 @@
 
 virtual or conda environment with python 3.6 is recommended
 
+execute `pip3 install -r requirements.txt`
+
 #### Train
 
 To train a 3-relation ment-norm model, from the main folder run 
@@ -28,6 +30,8 @@ Execute
 
 Execute
 
-    python -u -m nel.main --mode text
+    python -u -m nel.main --mode test --input_file [FILENAME]
 
-It shows the result of entity linking for test_text.txt
+It shows the result of entity linking for `FILENAME`
+Input file should contain each input document per one line.
+Input file template is shown in test_text.txt
