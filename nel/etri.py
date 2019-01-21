@@ -8,8 +8,8 @@ from nel.dataset_changer import change_to_conll, change_to_tsv
 
 def getETRI(text):
 	# print(text)
-	host = '143.248.135.146'
-	port = 33344
+	host = '143.248.135.146' # Modify here
+	port = 33344 # Modify here
 	
 	ADDR = (host, port)
 	clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

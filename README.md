@@ -35,3 +35,7 @@ Execute
 It shows the result of entity linking for `FILENAME`
 Input file should contain each input document per one line.
 Input file template is shown in test_text.txt
+
+#### To use ETRI Module
+
+After installing ETRI Module, change `host` and `port` at nel/etri.py, line 11 and 12.
