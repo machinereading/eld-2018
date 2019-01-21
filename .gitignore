@@ -3,3 +3,4 @@
 data/
 kb_ref/
 .DS_Store
+*.pyc
