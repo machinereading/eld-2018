@@ -329,7 +329,7 @@ class CoNLLDataset:
     reading dataset from CoNLL dataset, extracted by https://github.com/dalab/deep-ed/
     """
 
-    def __init__(self, path, person_path, conll_path):
+    def __init__(self, path, person_path):
         print('load csv')
         self.train = read_csv_file(path + '/cs_train.tsv')
         self.test = read_csv_file(path + '/cs_test.tsv')
@@ -347,9 +347,26 @@ class CoNLLDataset:
         read_conll_file(self.dev, path + '/cs_dev.conll')
 
 
+class EvalDataset:
+
+    def __init__(self, path, person_path):
+        print('load csv')
+        self.test = read_csv_file(path + '/cs_test.tsv')
+        self.dev = read_csv_file(path + '/cs_dev.tsv')
+        
+        print('process coref')
+        person_names = load_person_names(person_path)
+        with_coref(self.test, person_names)
+        with_coref(self.dev, person_names)
+
+        print('load conll')
+        read_conll_file(self.test, path + '/cs_test.conll')
+        read_conll_file(self.dev, path + '/cs_dev.conll')
+
+
 class TestDataset:
 
-    def __init__(self, path, person_path, conll_path):
+    def __init__(self, path, person_path):
         print('load csv')
         self.tta = read_csv_file(path + '/tta.tsv')
         
@@ -363,10 +380,9 @@ class TestDataset:
 
 if __name__ == "__main__":
     path = '../data/generated/test_train_data/'
-    conll_path = '../data/basic_data/test_datasets/'
     person_path = '../data/basic_data/p_e_m_data/persons.txt'
 
-    dataset = CoNLLDataset(path, person_path, conll_path)
+    dataset = CoNLLDataset(path, person_path)
 
     # for doc_name, content in train_dataset.items():
     #     print(doc_name)

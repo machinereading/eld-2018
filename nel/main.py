@@ -17,7 +17,6 @@ parser = argparse.ArgumentParser()
 
 datadir = 'data/generated/test_train_data/'
 testdir = 'data/generated/test_train_data/'
-conll_path = 'data/basic_data/test_datasets/'
 person_path = 'data/basic_data/p_e_m_data/persons.txt'
 voca_emb_dir = 'data/generated/embeddings/word_ent_embs/'
 
@@ -112,7 +111,7 @@ def entity_linking_plain(text):
     jpype.attachThreadToJVM()
     processed_text = make_text_into_conll(text)
     print('load conll at', datadir)
-    conll = D.TestDataset(testdir, person_path, conll_path)
+    conll = D.TestDataset(testdir, person_path)
 
     dev_datasets = [('tta', conll.tta)]
 
@@ -140,7 +139,10 @@ def entity_linking_plain(text):
 
 if __name__ == "__main__":
     print('load conll at', datadir)
-    conll = D.CoNLLDataset(datadir, person_path, conll_path)
+    if args.mode == 'train':
+        conll = D.CoNLLDataset(datadir, person_path)
+    elif args.mode == 'eval':
+        conll = D.EvalDataset(datadir, person_path)
 
     print('create model')
     word_voca, word_embeddings = utils.load_voca_embs(voca_emb_dir + 'dict.word',
