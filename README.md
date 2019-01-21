@@ -2,7 +2,6 @@
 공유를 위한 eld 모듈입니다.
 
 ## Introduction
-========
 <https://github.com/lephong/mulrel-nel> 의 모델을 기반으로 작업한 모델입니다.
 
 #### Train
