@@ -29,6 +29,6 @@ Execute
 
 Execute
 
-    python -u -m nel.main --mode text
+    python -u -m nel.main --mode test
 
 It shows the result of entity linking for test_text.txt
