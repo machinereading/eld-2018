@@ -5,4 +5,4 @@ kb_ref/
 .DS_Store
 *.pyc
 __pycache__/
-nel/__pycache__/
+/nel/__pycache__/
