@@ -1,15 +1,9 @@
 # eld-2018
 공유를 위한 eld 모듈입니다.
 
-mulrel-nel: Multi-relational Named Entity Linking
+## Introduction
 ========
-
-A Python implementation of Multi-relatonal Named Entity Linking described in 
-
-[1] Phong Le and Ivan Titov (2018). [Improving Entity Linking by 
-Modeling Latent Relations between Mentions](https://arxiv.org/pdf/1804.10637.pdf). ACL 2018.
-
-Written and maintained by Phong Le (ple [at] exseed.ed.ac.uk )
+<https://github.com/lephong/mulrel-nel> 의 모델을 기반으로 작업한 모델입니다.
 
 #### Train
 
