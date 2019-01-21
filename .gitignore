@@ -1,0 +1,5 @@
+*.pickle
+.vscode/
+data/
+kb_ref/
+.DS_Store
