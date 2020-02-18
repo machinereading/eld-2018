@@ -40,3 +40,6 @@ Input file template is shown in test_text.txt
 #### To use ETRI Module
 
 After installing ETRI Module, change `host` and `port` at nel/etri.py, line 11 and 12.
+
+#### kb-ref files
+You can download required files from [here](https://drive.google.com/open?id=1HSSMVReFfi70cqKJbmxixkdrgFn0AfQH).
